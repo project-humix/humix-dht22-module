@@ -1,17 +1,8 @@
-var nats = require('nats').connect();
 var log = require('logule').init(module, 'temp');
 var HumixSense = require('node-humix-sense')
  
 var child = require('child_process');
 var proc;
-
-
-nats.subscribe('humix.sense.temp.status.ping', function(request,replyto){
-    log.info('Sending Pong');
-    nats.publish(replyto, 'humix.sense.temp.status.pong');
-});
-
-
 
 var config = {
     "moduleName":"dht22",
