@@ -25,7 +25,7 @@ humix.on('connection', function(humixSensorModule){
 
 function getSensorData(){
 
-    proc = child.exec("sudo ./controls/humix-sense-temp/loldht 7", function(err,data){
+    proc = child.exec("sudo ./loldht 7", function(err,data){
 
         if(err){
 
